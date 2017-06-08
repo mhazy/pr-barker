@@ -1,0 +1,46 @@
+{
+  "name": "pr-barker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf dist/ && npm run lint",
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "lint": "tslint src/*.ts src/**/*.ts",
+    "dev": "NODE_ENV=development nodemon"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.39",
+    "@types/koa-router": "^7.0.22",
+    "@types/moment": "^2.13.0",
+    "@types/morgan": "^1.7.32",
+    "@types/ramda": "^0.24.4",
+    "@types/request-promise": "^4.1.36",
+    "@types/winston": "^2.3.3",
+    "rimraf": "^2.6.1",
+    "ts-node": "^3.2.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
+  },
+  "dependencies": {
+    "@types/koa-bodyparser": "^3.0.23",
+    "@types/moment-timezone": "^0.2.34",
+    "@types/node": "^8.0.13",
+    "electrode-confippet": "^1.5.0",
+    "graphql-request": "^1.2.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-helmet": "^3.2.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.2.1",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
+    "morgan": "^1.8.2",
+    "node-schedule": "^1.2.3",
+    "nodemon": "^1.11.0",
+    "ramda": "^0.24.1",
+    "request-promise": "^4.2.1",
+    "winston": "^2.3.1"
+  }
+}

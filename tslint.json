@@ -1,0 +1,16 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": "never"
+      }
+    ]
+  }
+}

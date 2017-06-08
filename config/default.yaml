@@ -1,0 +1,11 @@
+app:
+  log_level:
+    console: "info"
+tasks:
+  - name:
+    repo:
+      owner: owner
+      repository: repo
+    schedule: 0 9,13 * * 1,2,3,4,5
+    github: token
+    slack: token
