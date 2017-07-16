@@ -2,7 +2,6 @@ import * as scheduler from "node-schedule"
 
 import { getRepositoryPullRequests, transformPrToSlackMessage } from "../adapter/github"
 import { postAttachmentsToSlack } from "../adapter/slack"
-import { config } from "./config"
 import { logger } from "./logger"
 import { IPr, IRepo, ITaskConfig } from "./types"
 
@@ -21,6 +20,7 @@ const createScheduledTask = (repoConfig: ITaskConfig) => () =>
     ))
 
 const scheduleTask = (taskConfig: ITaskConfig) => {
+  logger.info(`Scheduling ${taskConfig.name} with ${taskConfig.schedule}`)
   scheduler.scheduleJob(taskConfig.schedule, createScheduledTask(taskConfig))
 }
 
