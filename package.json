@@ -8,7 +8,8 @@
     "build": "tsc",
     "start": "NODE_ENV=production node dist/index.js",
     "lint": "tslint src/*.ts src/**/*.ts",
-    "dev": "NODE_ENV=development nodemon"
+    "dev": "NODE_ENV=development nodemon",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@types/koa": "^2.0.39",
