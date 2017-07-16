@@ -2,7 +2,7 @@ app:
   log_level:
     console: "info"
 tasks:
-  - name:
+  - name: Project
     repo:
       owner: owner
       repository: repo
