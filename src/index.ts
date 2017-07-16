@@ -14,7 +14,7 @@ app
   .use(bodyParser())
   .use(apiRouter.routes())
   .use(morgan("combined", { stream: streamWriter }))
-const server = app.listen(3001)
+const server = app.listen(process.env.PORT)
 
 // Schedule task
 const tasks = config.$("tasks") as ITaskConfig[]
