@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "rimraf dist/ && npm run lint",
     "build": "tsc",
-    "start": "ts-node src/index.ts",
+    "start": "NODE_ENV=production node dist/index.js",
     "lint": "tslint src/*.ts src/**/*.ts",
     "dev": "NODE_ENV=development nodemon"
   },
