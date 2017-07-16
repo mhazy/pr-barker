@@ -86,7 +86,7 @@ const createClient = (token: string) => {
   })
 }
 
-export const getRepositoryPullRequests = (repoConfig: ITaskConfig, count: number = 5): Promise<IPr[]> => {
+export const getRepositoryPullRequests = (repoConfig: ITaskConfig, count: number = 25): Promise<IPr[]> => {
   return createClient(repoConfig.github)
     .request(getPrQuery(repoConfig.repo, count))
     .then(handleGraphResponse)
