@@ -1,4 +1,4 @@
-import * as scheduler from "node-schedule"
+import * as cron from "cron"
 
 import { getRepositoryPullRequests, transformPrToSlackMessage } from "../adapter/github"
 import { postAttachmentsToSlack } from "../adapter/slack"
@@ -21,7 +21,7 @@ const createScheduledTask = (repoConfig: ITaskConfig) => () =>
 
 const scheduleTask = (taskConfig: ITaskConfig) => {
   logger.info(`Scheduling ${taskConfig.name} with ${taskConfig.schedule}`)
-  scheduler.scheduleJob(taskConfig.schedule, createScheduledTask(taskConfig))
+  new cron.CronJob(taskConfig.schedule, createScheduledTask(taskConfig), null, true, "America/Toronto")
 }
 
 export const scheduleTasks = (tasks: ITaskConfig[]) => {

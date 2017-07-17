@@ -13,7 +13,7 @@ declare module "electrode-confippet" {
   export = config
 }
 
-declare module "node-schedule" {
-  const scheduler: any
-  export = scheduler
+declare module "cron" {
+  const cron: any
+  export = cron
 }
