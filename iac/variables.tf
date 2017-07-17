@@ -25,5 +25,5 @@ variable "subdomain" {
 }
 
 variable "app_address" {
-  description = "Address to point CNAME record too"
+  description = "Address to point CNAME record to."
 }
