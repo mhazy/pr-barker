@@ -21,9 +21,9 @@ const createScheduledTask = (repoConfig: ITaskConfig) => () =>
 
 const scheduleTask = (taskConfig: ITaskConfig) => {
   logger.info(`Scheduling ${taskConfig.name} with ${taskConfig.schedule}`)
-  new cron.CronJob(taskConfig.schedule, createScheduledTask(taskConfig), null, true, "America/Toronto")
+  return new cron.CronJob(taskConfig.schedule, createScheduledTask(taskConfig), null, true, "America/Toronto")
 }
 
 export const scheduleTasks = (tasks: ITaskConfig[]) => {
-  tasks.forEach(scheduleTask)
+  const cronJobs = tasks.map(scheduleTask)
 }
